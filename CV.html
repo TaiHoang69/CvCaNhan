@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Cá Nhân</title>
+  <style>
+    /* Tiêu đề */
+    h2#TTCN, h2#QTHT, h2#KyNang, h2#LH {
+      text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+      font-weight: bold;
+    }
+    h2#TTCN {color: green;}
+    h2#QTHT {color: yellow;}
+    h2#KyNang{color: pink;}
+    h2#LH {color: brown;}
+
+    /* Container chung cho responsive */
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .section > div {
+      flex: 1 1 100%;          
+      box-sizing: border-box;
+      border: 1px solid #ccc;  
+      border-radius: 10px;     
+      padding: 15px;           
+      background: #fff;        
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    /* Hover cho card */
+    .section > div:hover {
+      border-color: #4CAF50; 
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transform: translateY(-3px);
+    }
+
+    /* Responsive: >=768px thì 2 cột */
+    @media (min-width: 768px) {
+      .section > div {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+
+    /* Bảng điểm */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: center;
+    }
+
+    table th, table td {
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    /* Zebra table */
+    table tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    /* Hover từng hàng */
+    table tbody tr {
+      transition: background-color 0.3s ease;
+    }
+
+    table tbody tr:hover {
+      background-color: #f2f2f2;
+    }
+
+    /* Thêm CSS cho thông báo lỗi */
+    .error {
+      color: red;
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* Highlight input lỗi */
+    .invalid {
+      border: 2px solid red !important;
+      background-color: #ffe6e6;
+    }
+
+    /* Thông báo thành công */
+    .success {
+      color: green;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">CV Hoàng Thanh Tài</h1>
+  <hr>
+
+  <div class="section">
+
+    <!-- Mục lục -->
+    <div>
+      <h2>Mục Lục</h2>
+      <ul>
+        <li><a href="#TTCN">Xem thông tin cá nhân</a></li>
+        <li><a href="#QTHT">Xem quá trình học tập</a></li>
+        <li><a href="#KyNang">Xem kỹ năng</a></li>
+        <li><a href="#LH">Xem liên hệ</a></li>
+      </ul>
+    </div>
+
+    <!-- Thông tin cá nhân -->
+    <div>
+      <h2 id="TTCN">Thông tin cá nhân</h2>
+      <ul>
+        <li>Họ và tên: Hoàng Thanh Tài</li>
+        <li>Ngày sinh: 11/11/2003</li>
+        <li>Giới tính: Nam</li>
+        <li>Địa chỉ: Tàm Xá - Đông Anh - Hà Nội</li>
+        <li>Email: abc@gmail.com</li>
+        <li>SĐT: 0123456789</li>
+      </ul>
+    </div>
+
+    <!-- Quá trình học tập -->
+    <div>
+      <h2 id="QTHT">Quá trình học tập</h2>
+      <ul>
+        <a href="https://vnua.edu.vn/">
+          <img src="https://www.bing.com/th/id/OIP.A2q0NasgQw8VxK3Bp-brtwHaER?w=234&h=211&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" 
+               alt="VNUA" style="width: 100px; height: 100px;">
+        </a>
+        <li>Đại học: Học viện Nông nghiệp Việt Nam</li>
+        <li>Chuyên ngành: Công nghệ thông tin</li>
+        <a href="https://fita.vnua.edu.vn/">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.TDHHaD8wcCKv0_ljYC3qNgHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" 
+               alt="VNUA" style="width: 100px; height: 100px;">
+        </a>
+        <li>Thời gian học: 2023 - 2027</li>
+      </ul>
+    </div>
+
+    <!-- Bảng điểm -->
+    <div>
+      <h2>Bảng điểm</h2>
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">STT</th>  
+            <th rowspan="2">Môn học</th>
+            <th colspan="3">Điểm thi</th>
+            <th rowspan="2">Thông tin môn học</th>
+          </tr>
+          <tr>
+            <th>Lần 1</th>
+            <th>Lần 2</th>
+            <th>Lần 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Kỹ thuật lập trình</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td><a href="https://dse.vnua.edu.vn/cnpm/th02034/">Chi tiết</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Cấu trúc dữ liệu và giải thuật</td>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td><a href="https://dse.vnua.edu.vn/cnpm/th02016/">Chi tiết</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Kỹ năng -->
+    <div>
+      <h2 id="KyNang">Kỹ năng</h2>
+      <ul>
+        <li>Lập trình: C#, HTML, CSS, Javascript</li>
+        <li>Cơ sở dữ liệu: SQL Server, MySQL</li>
+        <li>Kỹ năng mềm: Giao tiếp, Làm việc nhóm, Thuyết trình</li>
+      </ul>
+    </div>
+
+    <!-- Liên hệ -->
+    <div>
+      <h2 id="LH">Liên Hệ</h2>
+      <form id="contactForm" action="#" method="post" style="max-width: 100%; margin-top: 10px;">
+        <label for="name">Họ và tên:</label><br>
+        <input type="text" id="name" name="name" style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+        <label for="phone">SĐT:</label><br>
+        <input type="text" id="phone" name="phone" style="width: 100%; padding: 8px; margin-bottom: 10px;"><br>
+
+        <label for="message">Nội dung:</label><br>
+        <textarea id="message" name="message" rows="5" style="width: 100%; padding: 8px; margin-bottom: 10px;"></textarea><br>
+
+        <button type="submit" style="padding: 10px 20px; background-color: green; color: white; border: none; cursor: pointer;">
+          Gửi
+        </button>
+
+        <!-- Khu vực hiển thị thông báo -->
+        <div id="formMessage"></div>
+      </form>
+    </div>
+
+  </div>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // chặn gửi form mặc định
+
+      let errors = [];
+
+      // Lấy giá trị input
+      let name = document.getElementById("name");
+      let email = document.getElementById("email");
+      let phone = document.getElementById("phone");
+      let message = document.getElementById("message");
+
+      // Reset class lỗi
+      [name, email, phone, message].forEach(input => input.classList.remove("invalid"));
+
+      // Kiểm tra rỗng
+      if (name.value.trim() === "") {
+        errors.push("Họ và tên không được để trống.");
+        name.classList.add("invalid");
+      }
+      if (email.value.trim() === "") {
+        errors.push("Email không được để trống.");
+        email.classList.add("invalid");
+      }
+      if (phone.value.trim() === "") {
+        errors.push("Số điện thoại không được để trống.");
+        phone.classList.add("invalid");
+      }
+      if (message.value.trim() === "") {
+        errors.push("Nội dung không được để trống.");
+        message.classList.add("invalid");
+      }
+
+      // Kiểm tra định dạng email
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (email.value.trim() !== "" && !emailPattern.test(email.value.trim())) {
+        errors.push("Email không đúng định dạng.");
+        email.classList.add("invalid");
+      }
+
+      // Kiểm tra định dạng SĐT (9-11 số)
+      let phonePattern = /^[0-9]{9,11}$/;
+      if (phone.value.trim() !== "" && !phonePattern.test(phone.value.trim())) {
+        errors.push("Số điện thoại phải là 9-11 chữ số.");
+        phone.classList.add("invalid");
+      }
+
+      // Hiển thị thông báo
+      let formMsg = document.getElementById("formMessage");
+      if (errors.length > 0) {
+        formMsg.className = "error";
+        formMsg.innerHTML = errors.join("<br>");
+      } else {
+        formMsg.className = "success";
+        formMsg.innerHTML = "✅ Gửi form thành công!";
+        this.reset(); // reset form
+      }
+    });
+  </script>
+</body>
+</html>
